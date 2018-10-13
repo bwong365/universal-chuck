@@ -2,6 +2,7 @@
   "name": "universal-chuck",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://universal-chuck.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^4.9.3",

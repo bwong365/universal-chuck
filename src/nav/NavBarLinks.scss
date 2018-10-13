@@ -1,0 +1,33 @@
+@import '../variables';
+
+//  These are the links when displayed as a bar
+#navlinks {
+  height: 100%;
+  width: 100%;
+
+  li {
+    @include mix(background-color, --primary, $primary);
+    border: solid rgba(0,0,0,.15);
+    border-width: 0 1px 0 0;
+    float: left;
+    height: 100%;
+    width: 7rem;
+    transition: background-color .5s ease-in-out;
+          
+    &:hover {
+      @include mix(background-color, --secondary, $secondary);
+      border: none;
+      padding-right: 1px;  // offsets the missing border
+    }
+
+    a {
+      @include mix(color, --font-color, $font-color);
+      @extend %flex;
+      align-items: center;
+      cursor: default;
+      height: 100%;
+      justify-content: center;
+      text-decoration: none;
+    }
+  }
+}

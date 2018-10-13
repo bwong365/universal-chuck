@@ -1,0 +1,15 @@
+@import '../variables';
+
+button {
+  @include mix(background-color, --secondary, $secondary);
+  @include mix(color, --font-color, $font-color);
+  @extend %shadow;
+
+  border: none;
+  border-radius: 2px;
+  display: block;
+  font-size: 1.2rem;
+  height: 40px;
+  margin: 20px auto;
+  width: 130px;
+}

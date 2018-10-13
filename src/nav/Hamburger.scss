@@ -1,0 +1,42 @@
+@import '../variables';
+
+// Menu container
+#hamburger {
+  margin: 13px;
+  width: 35px;
+}
+
+// provides visual feedback when hovered over
+#bun {
+  border-radius: 50%;
+  height: 48px;
+  left: 3px;
+  position: absolute;
+  top: 1px;
+  transition-duration: .5s;
+  width: 49px;
+  z-index: -1;
+}
+
+// provdes an invisible div for the mouseover to trigger
+#hover {
+  border-radius: 50%;
+  height: 48px;
+  left: 3px;
+  position: absolute;
+  top: 1px;
+  width: 49px;
+  z-index: 5;
+
+}
+
+//  the hamburger parts
+#bar1, #bar2, #bar3 {
+  @include mix(background-color, --font-color, $font-color);
+  border-radius: 14px;
+  height: 4px;
+  margin: 6px 0;
+  transition: .4s;
+  width: 29px;
+}
+

@@ -1,0 +1,33 @@
+@import '../variables';
+
+//  Links displayed with the hamburger menu
+#navmenulinks {
+  @include mix(background-color, --primary, $primary);
+  box-shadow: 3px 3px 4px -3px var(--shadow);
+  height: 100%;
+  left: 0;
+  position: relative;
+  transition: left .5s ease-in-out;
+  width: 150px;
+
+  li {
+    border: solid rgba(0,0,0,.15);
+    border-width: 1px 1px 0 0;
+    height: 3rem;
+    transition: background-color .5s ease-in-out;
+    
+    &:hover {
+      @include mix(background-color, --secondary, $secondary)
+    }
+    
+    a {
+      @include mix(color, --font-color, $font-color);
+      @extend %flex;
+      align-items: center;
+      cursor: default;
+      height: 100%;
+      padding-left: 30%;
+      text-decoration: none;
+    }
+  }
+}

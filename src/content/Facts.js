@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import FactBox from './FactBox';
-import TextBox from './TextBox';
+import ChuckForm from './get-chuck/ChuckForm'
 import axios from 'axios';
 
 export default class Facts extends Component {
@@ -41,27 +40,27 @@ export default class Facts extends Component {
     const endpoint = languages[randomLang];
     const text = encodeURI(this.state.fact);
   
-    
-    axios({
-      method: 'get',
-      Origin: 'http://www.funtranslations.com',
-      url: 'https://api.funtranslations.com/translate/' + endpoint + '.json?text=' + text
-    }).then(response => {
-      this.setState({
-        translation: response.contents.translation
-      });
-    }).catch(error => console.log(error));
+    const xhr = new XMLHttpRequest();
+    xhr.open('get', 'https://api.funtranslations.com/translate/' + endpoint + '.json?text=' + text);
+    xhr.responseType = 'json';
+
+    xhr.onload = () => {
+      if (this.status == 200) {
+        var xyz = this.response;
+        console.log(xyz);
+      }
+      console.log(xyz);
+    }
+
+    xhr.send();
   }
-
-
+    
   render() {
     return (
       <div>
         <h1>Chuck Norris Facts!</h1>
-        <FactBox text={this.state.fact} loaded={this.getNewFact}/>
-        <TextBox text={this.state.translation} />
+        <ChuckForm />
       </div>
     )
   }
-  
 }

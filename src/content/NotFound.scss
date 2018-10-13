@@ -1,0 +1,39 @@
+@import '../variables';
+
+#container404 {
+  display: inline-block;
+  position: relative;
+  
+}
+
+#block404 {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+
+#img404 {
+  max-height: 90vh;
+  max-width: 100%;
+}
+
+#msg404 {
+  color: white;
+  font-size: 6vw;
+  font-weight: 500;
+  max-width: 50%;
+  position: absolute;
+  right: 8%;
+  text-align: right;
+  text-shadow: 0 0 8px rgba(0,0,0,.4);
+  top: 25%;
+  z-index: 1;
+  
+  @media only screen and (min-width: $min-width-tablet) {
+    font-size: 5vw;
+  }
+  @media only screen and (min-width: $min-width-desktop) {
+    font-size: 4vw;
+  }
+}

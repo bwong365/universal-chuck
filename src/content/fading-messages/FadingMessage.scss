@@ -1,0 +1,10 @@
+@import '../../variables';
+@import url('https://fonts.googleapis.com/css?family=Niramit');
+
+.fadeMessage {
+  @include mix(color, --primary, $primary);
+  opacity: 0;
+  transition: 1.5s ease-out;
+  font-family: 'Niramit', sans-serif;
+  font-size: 3rem;
+}

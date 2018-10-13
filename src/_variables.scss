@@ -1,0 +1,48 @@
+/* Media breakpoints are taken from Bootstrap */
+/* Mobile first development results in default design for min-width < 575px */
+$min-width-mobile: 576px;
+$min-width-tablet: 768px;
+$min-width-desktop: 992px;
+$min-width-large: 1200px;
+
+/* Set the color scheme
+#61e786
+#12355b
+#48435c
+#9792e3
+#eeeeee
+
+* setting colors in vanilla CSS should allow for JS-triggered theming */
+body {
+  --primary: #289e5d;
+  --secondary: #2f7fd4;
+  --grey: #5a5766;
+  --shadow: #18345fd0;
+  --background: #eeeeee;
+  --font-color: var(--background);
+}
+
+/* mixin will allow for fallback protection on CSS custom properties */
+$primary: #61e786;
+$secondary: #12355b;
+$grey: #5a5766;
+$shadow: #48435c;
+$background: #eeeeee;
+$font-color: $background;
+
+@mixin mix($property, $variable, $fallback) {
+  #{$property}: $fallback;
+  #{$property}: var($variable);
+}
+
+/* prefixes recommended by shouldiprefix.com */
+%flex {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+%shadow {
+  box-shadow: 3px 3px 4px -3px var(--shadow);
+}

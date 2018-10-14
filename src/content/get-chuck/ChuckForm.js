@@ -4,6 +4,7 @@ import Button from '../../form-parts/Button'
 import Dropdown from '../../form-parts/Dropdown'
 import Chuck from '../loading/Chuck'
 import './ChuckForm.scss'
+import formatResponse from './formatResponse'
 
 const languages = [
   { value: 'yoda', title: 'Yoda' },
@@ -22,6 +23,7 @@ export default class ChuckForm extends Component {
       text: '',
       language: '',
       chuck: false,
+      warning: false
     }
   }
 
@@ -39,20 +41,26 @@ export default class ChuckForm extends Component {
     const lang = this.state.language
     
     const url = 'https://universal-chuck-controller.herokuapp.com/chuck/'
-    console.log(url + lang);
-    
-    axios.get(url + lang)
+    setTimeout(() => this.sendRequest(url + lang), 1500);
+  }
+
+  sendRequest = (endpoint) => {
+    axios.get(endpoint)
       .then(res => {
         this.setState({
           chuck: false,
-          text: res.data
+          text: formatResponse(res)
         })
       })
       .catch(err => {
-        this.setState({
-          chuck: false,
-          text: 'something went wrong'
-        })
+        if (this.state.text === '') {
+          this.setState({
+            text: 'Looks like Chuck might be coming for you...'
+          });
+          this.setState({
+            chuck: false
+          })
+        }
         console.log(err.data);
       });
   }
@@ -60,19 +68,29 @@ export default class ChuckForm extends Component {
   handleChange = (e) => {
     this.setState({
       language: e.target.value
+    }, () => {
+      if (this.state.language !== '') {
+        this.setState({
+          warning: true
+        });
+      }
     })
   }
   
   render() {
-    
+    const rotation = Math.floor(Math.random() * 720) - 360;
+    const rotateStyle = {
+      transform: `rotate(${rotation}deg)`
+    }
     return (
       <div>
         <form>
           <Button title='Learn me some facts!' name='getFacts' onClick={this.handleClick} />
           <Dropdown options={languages} onChange={this.handleChange}/>
+          {<span></span>}
         </form>
-        <p style={{marginTop: 50, fontSize: '1.1rem'}}>{this.state.text}</p>
-        <div className='flex'>
+        <p>{this.state.text}</p>
+        <div className='flex' style={rotateStyle}>
           {this.state.chuck && <Chuck />}
         </div>
       </div>

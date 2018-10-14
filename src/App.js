@@ -9,7 +9,8 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import NavBar from './nav/NavBar'
 import Facts from './content/Facts'
 import Home from './content/Home'
-import NotFound from './content/NotFound'
+import NotFound from './content/not-found/NotFound'
+import About from './content/about'
 
 import './App.scss'
 
@@ -19,6 +20,11 @@ const links = [
     label: 'Facts',
     path: '/facts',
     component: Facts
+  },
+  {
+    label: 'About',
+    path: '/about',
+    component: About
   }
 ]
 

@@ -1,0 +1,18 @@
+form {
+  margin: 20px 0;
+}
+
+.warning {
+  color: rgb(219, 22, 22);
+  font-size: .9rem;
+  margin-top: 5px;
+}
+
+.flex {
+  display: inline-block;
+  margin: 20px auto;
+  position: relative;
+  justify-content: center;
+  width: 50px;
+  z-index: 5;
+}

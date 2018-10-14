@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
-
+@import './variables';
 body {
   font-family: Ubuntu, sans-serif;
 }
@@ -10,21 +10,36 @@ main {
 }
 
 h1 {
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 2rem;
   font-weight: bold;
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
 p {
-  padding-top: 30px;
-  margin: 0 auto;
+  margin: 20px auto;
   font-size: 1.1rem;
   max-width: 700px;
+  width: 100%;
   line-height: 1.4;
+}
+
+.barTitle {
+  @include mix(color, --font-color, $font-color);
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  top: 1rem;
+  left: 0;
+    
+  font-weight: 500;
+  font-size: 1.2rem;
+
+  z-index: 10;
 }

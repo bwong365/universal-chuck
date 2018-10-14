@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Home = () => (
+const Home = ({ isExpanded, title }) => (
   <div>
-    <h1>The Universal Chuck Translation App</h1>
+    {isExpanded 
+      ? <h1>{title}</h1>
+      : <div className='barTitle'>{title}</div>
+    }
     <p>
       This app is for anyone who wants to study the phenomenon
       that is Chuck Norris, but gets confused by all these contemporary

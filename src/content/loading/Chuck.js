@@ -1,13 +1,14 @@
 import React from 'react';
 
 import chuck from './chuck.svg'
-import './spaz.scss';
+import './Chuck.scss';
 
 const Chuck = () => {
   return (
     // Chuck spins and pulses at differing rates (both use transform)
-    <div className="spin">
-      <img className="pulse" src={chuck} style={{color: 'white'}} alt="Chuck Norris" />
+    <div className='spin'>
+      <div className='circle pulse'></div>
+      <img className='pulse' src={chuck} alt=''/>
     </div>
   )
 }

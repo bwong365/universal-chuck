@@ -5,7 +5,7 @@ import './NavMenuLinks.scss';
 // NavMenuLinks must be a Component for NavMenu to set a ref
 export default class NavMenuLinks extends Component {
   render() {
-    const { open, links, home, homeText } = this.props;
+    const { open, links, homeText } = this.props;
     
     // toggles menu open or closed
     const left = open ? 0 : -155;
@@ -19,8 +19,7 @@ export default class NavMenuLinks extends Component {
 
     return (
       <ul id='navmenulinks' style={{'left': left}}>
-        {/* Home depends on prop for existence */}
-        {home && <li><Link to='/'>{homeText}</Link></li>}
+        <li><Link to='/'>{homeText}</Link></li>
         {linkList}
       </ul>
     );

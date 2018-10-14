@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import ChuckForm from './get-chuck/ChuckForm'
+import React from 'react';
+import FactsForm from './get-facts/FactsForm'
 
-export default class Facts extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Chuck Norris Facts!</h1>
-        <ChuckForm />
-      </div>
-    )
-  }
-}
+const Facts = ({ isExpanded, title }) => (
+  <div>
+    {
+      isExpanded ? <h1>{title}</h1> 
+                : <div className='barTitle'>{title}</div>
+    }
+    <FactsForm />
+  </div>
+)
+
+export default Facts;

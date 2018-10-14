@@ -9,7 +9,7 @@ import Chuck from '../loading/Chuck'
 
 // Helper & style
 import formatResponse from './formatResponse'
-import './ChuckForm.scss'
+import './FactsForm.scss'
 
 // endpoints are found at api.funtranslations.com
 const languages = [
@@ -23,7 +23,7 @@ const languages = [
   { value: '', title: "Back to Chuck's native tongue!" },
 ];
 
-export default class ChuckForm extends Component {
+export default class FactsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,20 +74,20 @@ export default class ChuckForm extends Component {
       });
   }
 
+  // Changes language
   handleChange = (e) => {
     this.setState({
       language: e.target.value
     }, () => {
-      if (this.state.language !== '') {
-        this.setState({
-          warning: true
-        });
-      }
+      this.setState({
+        // Show a warning based on the new state
+        warning: this.state.language ? true : false
+      })
     })
   }
   
   render() {
-    // Let Chuck start spinning from a random starting point
+    // Let Chuck start spinning from a random starting angle
     const rotation = Math.floor(Math.random() * 720) - 360;
     const rotateStyle = {
       transform: `rotate(${rotation}deg)`
@@ -99,16 +99,15 @@ export default class ChuckForm extends Component {
           <Button title='Learn me some facts!' name='getFacts' onClick={this.handleClick} />
           <Dropdown options={languages} onChange={this.handleChange}/>
           
-          { // warning display when language selected
-            this.state.warning && <div>
-              <span className='warning'>
+          { 
+            // warning display when language selected
+            this.state.warning && <div  className='warning'>
                 Note: api has a rate limit of 5 calls/hr
-              </span>
             </div>
           }
+
         </form>
         
-
         {/* Facts go here */}
         <p>{this.state.text}</p>
 
@@ -116,6 +115,7 @@ export default class ChuckForm extends Component {
         <div className='flex' style={rotateStyle}>
           {this.state.chuck && <Chuck />}
         </div>
+        
       </div>
     );
   }

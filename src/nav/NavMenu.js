@@ -42,7 +42,7 @@ export default class NavMenu extends Component {
 
   render() {
     return (
-      <div style={{width: 0}}>
+      <div style={{width: 0, zIndex: 55}}>
         <Hamburger onClick={this.toggleMenu}/>
         <NavMenuLinks
           ref='menu' home={this.props.home} homeText={this.props.homeText}

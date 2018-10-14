@@ -1,6 +1,18 @@
 /* Had to split up the spin and pulse, since CSS won't allow
    two different transform timings on the same element */
 
+.circle{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20%;
+  left: 10%;
+  border-radius: 50%;
+  background-color: rgba(255, 196, 0, 0.3);
+  box-shadow: 0px 0px 15px 16px rgba(255, 210, 7, 0.3);
+
+}
+
 .pulse {
   animation: pulse 2s infinite linear;
   -webkit-animation: pulse 2s infinite linear;

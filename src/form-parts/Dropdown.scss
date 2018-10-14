@@ -1,0 +1,13 @@
+@import '../variables';
+
+select {
+  color: #333;
+  padding: 5px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.16);
+  box-shadow: 0 2px 4px -2px rgba(0,0,0,.11);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+}

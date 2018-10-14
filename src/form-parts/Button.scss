@@ -9,7 +9,15 @@ button {
   border-radius: 2px;
   display: block;
   font-size: 1.2rem;
-  height: 40px;
+  min-height: 40px;
   margin: 20px auto;
   width: 130px;
+  padding: 5px;
+
+  &:hover {
+    box-shadow: 4px 3px 5px -3px rgba(0,0,0,.45);
+    @include mix(background-color, --primary, $primary);
+  }
+
+  
 }

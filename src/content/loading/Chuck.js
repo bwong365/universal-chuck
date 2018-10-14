@@ -1,10 +1,10 @@
 import React from 'react';
 import './spaz.css';
-
+import chuck from './chuck.svg'
 const Chuck = () => {
   return (
-    <div class="spin">
-      <img class="pulse" src="chuck.svg" alt="Chuck Norris" />
+    <div className="spin">
+      <img className="pulse" src={chuck} style={{color: 'white'}} alt="Chuck Norris" />
     </div>
   )
 }

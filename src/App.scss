@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
 @import './variables';
+
 body {
   font-family: Ubuntu, sans-serif;
 }
@@ -42,4 +43,33 @@ p {
   font-size: 1.2rem;
 
   z-index: 10;
+}
+
+footer {
+  display: none;
+}
+
+@media only screen and (min-width: $min-width-mobile) {
+  main {
+    margin-top: 17vh;
+  }
+
+  footer {
+    background-color: rgba(173, 173, 173, 0.568);
+    bottom: 0;
+    color: #333;
+    display: block;
+    font-size: .8rem;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+
+    div {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: flex-end;
+      padding-right: 5vw;
+    }
+  }
 }

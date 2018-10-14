@@ -1,5 +1,10 @@
+@import '../../variables';
+
 form {
-  margin: 20px 0;
+  margin: 30px 0 50px;
+  @media only screen and (min:width $min-width-mobile) {
+    margin: 20px 0;
+  }
 }
 
 .warning {

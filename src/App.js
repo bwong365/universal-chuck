@@ -90,6 +90,11 @@ class App extends Component {
               <Route path='*' component={NotFound} />
             </Switch>
           </main>
+          <footer>
+            <div>
+              Ben Wong 2018
+            </div>
+          </footer>
         </div>
       </Router>
     );

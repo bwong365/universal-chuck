@@ -10,7 +10,7 @@ import NavBar from './nav/NavBar'
 import Facts from './content/Facts'
 import Home from './content/Home'
 import NotFound from './content/not-found/NotFound'
-import About from './content/about'
+import About from './content/About'
 
 import './App.scss'
 

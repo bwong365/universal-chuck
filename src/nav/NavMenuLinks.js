@@ -6,7 +6,8 @@ import './NavMenuLinks.scss';
 export default class NavMenuLinks extends Component {
   render() {
     const { open, links, home, homeText } = this.props;
-    // toggles menu posiiton
+    
+    // toggles menu open or closed
     const left = open ? 0 : -155;
       
     // converts array into array of links from App.js

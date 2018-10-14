@@ -1,0 +1,61 @@
+/* Had to split up the spin and pulse, since CSS won't allow
+   two different transform timings on the same element */
+
+.pulse {
+  animation: pulse 2s infinite linear;
+  -webkit-animation: pulse 2s infinite linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+.spin {
+  animation: spin 2.5s infinite linear;
+  -webkit-animation: spin 2.5s infinite linear;
+  max-width: 50px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

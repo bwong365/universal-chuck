@@ -1,4 +1,4 @@
-This project can be found at [universal-chuck.herokuapp.com](https://universal-chuck.herokuapp.com), while its backend can be found at [universal-chuck-controller.herokuapp.com](https://universal-chuck-controller.herokuapp.com). This was primarily an exploration of Node.js, CORS, and whimsy.
+This project can be found at [universal-chuck.herokuapp.com](https://universal-chuck.herokuapp.com), while its backend repo can be found at [https://github.com/bwong365/universal-chuck-controller](https://github.com/bwong365/universal-chuck-controller). This was primarily an exploration of Node.js, CORS, and whimsy.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
